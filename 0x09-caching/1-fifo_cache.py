@@ -17,7 +17,7 @@ class FIFOCache(BaseCaching):
         if key in self.cache_data:
             self.cache_data[key] = item
             self.fifo_keys.remove(key)
-        elif len(self.fifo_keys) > BaseCaching.MAX_ITEMS:
+        elif len(self.fifo_keys) >= BaseCaching.MAX_ITEMS:
             remove = self.fifo_keys.pop(0)
             print("DISCARD: {}".format(remove))
             del self.cache_data[remove]
