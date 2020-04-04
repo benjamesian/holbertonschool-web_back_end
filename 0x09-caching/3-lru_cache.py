@@ -19,6 +19,7 @@ class LRUCache(BaseCaching):
             self.lru_keys.remove(key)
         elif len(self.lru_keys) >= BaseCaching.MAX_ITEMS:
             remove = self.lru_keys.pop(0)
+            print("DISCARD: {}".format(remove))
             del self.cache_data[remove]
 
         self.cache_data[key] = item
@@ -27,4 +28,6 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """Gen an item from the cache"""
         if key in self.cache_data:
+            self.lru_keys.remove(key)
+            self.lru_keys.append(key)
             return self.cache_data[key]
