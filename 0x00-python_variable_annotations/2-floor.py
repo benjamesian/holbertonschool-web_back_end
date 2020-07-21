@@ -4,4 +4,6 @@
 
 def floor(n: float) -> int:
     """Return the floor of a floating point number"""
-    return int(n) if n >= 0 else int(n - 1)
+    if n < 0 and n != int(n):
+        return int(n - 1)
+    return int(n)
