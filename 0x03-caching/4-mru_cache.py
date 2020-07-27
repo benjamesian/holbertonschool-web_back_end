@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """4. MRU Caching"""
-from base_caching import BaseCaching
+
+BaseCaching = __import__("base_caching").BaseCaching
 
 
 class MRUCache(BaseCaching):
