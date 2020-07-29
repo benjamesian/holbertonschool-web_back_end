@@ -4,7 +4,7 @@ from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """MRU Cache"""
+    """MRU Cache !!!"""
 
     def __init__(self):
         super().__init__()

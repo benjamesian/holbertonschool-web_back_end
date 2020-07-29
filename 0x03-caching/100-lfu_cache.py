@@ -5,7 +5,7 @@ from base_caching import BaseCaching
 
 
 class LFUCache(BaseCaching):
-    """LFU Cache"""
+    """LFU Cache !!!"""
 
     def __init__(self):
         super().__init__()
