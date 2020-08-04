@@ -3,11 +3,11 @@
 import bcrypt
 
 
-def hash_password(pwd: str) -> bytes:
+def hash_password(password: str) -> bytes:
     """Return a hash of a password"""
-    return bcrypt.hashpw(bytes(pwd, 'utf-8'), bcrypt.gensalt())
+    return bcrypt.hashpw(bytes(password, 'utf-8'), bcrypt.gensalt())
 
 
-def is_valid(encrypted: bytes, pwd: str) -> bool:
+def is_valid(hashed_password: bytes, password: str) -> bool:
     """Check if a hash matches a password"""
-    return bcrypt.checkpw(bytes(pwd, 'utf-8'), encrypted)
+    return bcrypt.checkpw(bytes(password, 'utf-8'), hashed_password)
