@@ -44,21 +44,21 @@ def before_req():
 def unauthorized(error) -> str:
     """ Unauthorized handler
     """
-    return jsonify({"error": "Unauthorized"}), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @app.errorhandler(403)
 def forbidden(error) -> str:
     """ Forbidden handler
     """
-    return jsonify({"error": "Forbidden"}), 403
+    return jsonify(error="Forbidden"), 403
 
 
 @app.errorhandler(404)
 def not_found(error) -> str:
     """ Not found handler
     """
-    return jsonify({"error": "Not found"}), 404
+    return jsonify(error="Not found"), 404
 
 
 if __name__ == "__main__":
