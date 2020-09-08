@@ -6,7 +6,7 @@ import pymongo
 def top_students(mongo_collection):
     """quert documetnts in coll"""
     return mongo_collection.aggregate([
-        {"$projects": {
+        {"$project": {
             "name": "$name",
             "averageScore": {"$avg": "$topics.score"}
         }},
