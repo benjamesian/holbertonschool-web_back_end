@@ -1,11 +1,11 @@
-function createIteratorObject(report) {
-  const allEmployees = Object.values(report).flatMap(x => x);
+export default function createIteratorObject(report) {
+  const allEmployees = Object.values(report).flatMap((x) => x);
 
   return {
-    *[Symbol.iterator] () {
+    * [Symbol.iterator]() {
       for (const employee of allEmployees) {
         yield employee;
       }
     },
-  }
+  };
 }
