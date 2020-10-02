@@ -1,4 +1,3 @@
-const { read } = require('fs');
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -7,7 +6,7 @@ const rl = readline.createInterface({
 });
 
 rl.question('Welcome to Holberton School, what is your name?\n', (ans) => {
-    console.log(`Your name is: ${ans}`);
-    console.log('This important software is now closing');
-    process.exit();
+  console.log(`Your name is: ${ans}`);
+  console.log('This important software is now closing');
+  process.exit();
 });
