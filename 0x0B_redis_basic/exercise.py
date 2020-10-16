@@ -22,7 +22,7 @@ class Cache:
 
     def get(self,
             key: str,
-            fn: Optional[Callable]) -> Union[str, bytes, int, float]:
+            fn: Optional[Callable] = None) -> Union[str, bytes, int, float]:
         """Retrieve data stored at a key"""
         value = self._redis.get(key)
         return fn(value) if fn else value
