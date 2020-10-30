@@ -1,14 +1,10 @@
--- do things to the user heeeen
-DROP TABLE IF EXISTS users;
-
-CREATE TABLE IF NOT EXISTS users (
-    id int not null AUTO_INCREMENT,
-    email varchar(255) not null,
-    name varchar(255),
-    valid_email boolean not null default 0,
-    PRIMARY KEY (id)
-);
-
-INSERT INTO users (email, name) VALUES ("bob@dylan.com", "Bob");
-INSERT INTO users (email, name, valid_email) VALUES ("sylvie@dylan.com", "Sylvie", 1);
-INSERT INTO users (email, name, valid_email) VALUES ("jeanne@dylan.com", "Jeanne", 1);
+-- SQL script that creates a trigger that decreases the quantity of an item after adding a new order.
+DELIMITER //
+CREATE TRIGGER `email_validation` BEFORE UPDATE
+ON users FOR EACH ROW
+BEGIN
+	IF OLD.email <> NEW.email THEN
+	   SET NEW.valid_email = 0;
+	END IF;
+END//
+DELIMITER ;
