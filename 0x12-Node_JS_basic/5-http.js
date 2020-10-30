@@ -11,7 +11,8 @@ const app = http
       case '/students':
         res.write('This is the list of our students');
         countStudents(process.argv[2])
-          .then((data) => res.end(data));
+          .then((data) => res.end(data))
+          .catch((err) => res.end(err.message));
         break;
       default:
         break;
