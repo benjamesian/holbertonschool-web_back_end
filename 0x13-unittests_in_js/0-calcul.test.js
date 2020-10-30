@@ -7,7 +7,7 @@ describe('calculateNumber', () => {
         assert.strictEqual(calculateNumber(1, -2), -1);
     });
 
-    it('should round it\'s arguments before addition', () => {
+    it('should round its arguments before addition', () => {
         assert.strictEqual(calculateNumber(1.1, 2.1), 3);
         assert.strictEqual(calculateNumber(1.4, 2.4), 3);
         assert.strictEqual(calculateNumber(0.9, 2.4), 3);
