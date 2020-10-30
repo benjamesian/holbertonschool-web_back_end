@@ -9,7 +9,7 @@ const app = http
         res.end('Hello Holberton School!');
         break;
       case '/students':
-        res.write('This is the list of our students');
+        res.write('This is the list of our students\n');
         countStudents(process.argv[2])
           .then((data) => res.end(data))
           .catch((err) => res.end(err.message));
